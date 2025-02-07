@@ -14,3 +14,4 @@ venv/share/
 venv/include/
 
 ## oonx파일
+venv/src/oonx
