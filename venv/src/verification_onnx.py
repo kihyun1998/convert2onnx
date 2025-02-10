@@ -15,12 +15,12 @@ def load_and_test_onnx_model(onnx_path: str, model_name: str, test_text: str):
         # 1. ONNX 모델 로드
         print(f"\n1. ONNX 모델 로드 중... ({onnx_path})")
         session = ort.InferenceSession(onnx_path)
-        print("✓ 모델 로드 성공")
+        print("[v] 모델 로드 성공")
 
         # 2. 토크나이저 로드
         print(f"\n2. 토크나이저 로드 중... ({model_name})")
         tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-        print("✓ 토크나이저 로드 성공")
+        print("[v] 토크나이저 로드 성공")
 
         # 3. 입력 텍스트 토큰화
         print(f"\n3. 입력 텍스트 토큰화 중...")
@@ -73,7 +73,7 @@ def load_and_test_onnx_model(onnx_path: str, model_name: str, test_text: str):
         print("\n✓ 검증 완료: 모델이 정상적으로 작동합니다.")
         
     except Exception as e:
-        print(f"\n❌ 오류 발생: {str(e)}")
+        print(f"\n[x] 오류 발생: {str(e)}")
         raise
 
 if __name__ == "__main__":

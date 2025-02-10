@@ -30,7 +30,7 @@ def convert_model_to_onnx(
         # 모델 설정 및 평가 모드로 전환
         model = AutoModel.from_pretrained(model_name, trust_remote_code=True)
         model.eval()  # 평가 모드 설정 (학습 모드 비활성화)
-        print("✓ 모델 및 토크나이저 로드 완료")
+        print("[v] 모델 및 토크나이저 로드 완료")
 
         print(f"\n2. 예시 입력 생성 중...")
 
@@ -39,7 +39,7 @@ def convert_model_to_onnx(
         # "np" - NumPy
         # "pt" - PyTorch
         inputs = tokenizer(example_text, return_tensors="pt")
-        print(f"✓ 입력 생성 완료 (토큰 수: {len(inputs['input_ids'][0])})")
+        print(f"[v] 입력 생성 완료 (토큰 수: {len(inputs['input_ids'][0])})")
 
         print(f"\n3. ONNX 변환 중...")
         # ONNX 모델 변환 설정
@@ -59,10 +59,10 @@ def convert_model_to_onnx(
                 "output": {0: "batch_size"}
             }
         )
-        print(f"✓ ONNX 변환 완료: {output_path}")
+        print(f"[v] ONNX 변환 완료: {output_path}")
 
     except Exception as e:
-        print(f"\n❌ 오류 발생: {str(e)}")
+        print(f"\n[x] 오류 발생: {str(e)}")
         raise
 
 if __name__ == "__main__":
