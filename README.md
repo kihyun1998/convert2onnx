@@ -18,3 +18,9 @@ source venv/bin/activate
 ```bash
 pip install torch transformers onnx onnxruntime
 ```
+
+## requirements.txt 만들기
+
+```bash
+pip freeze > requirements.txt
+```
