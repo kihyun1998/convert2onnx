@@ -24,7 +24,7 @@ def convert_model_to_onnx(
         tokenizer = AutoTokenizer.from_pretrained(
             model_name, 
             trust_remote_code=True, 
-            use_fast=False
+            use_fast=True
         )
 
         # 모델 설정 및 평가 모드로 전환
