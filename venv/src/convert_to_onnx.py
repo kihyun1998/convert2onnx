@@ -33,7 +33,11 @@ def convert_model_to_onnx(
         print("✓ 모델 및 토크나이저 로드 완료")
 
         print(f"\n2. 예시 입력 생성 중...")
+
         # 토큰화 및 PyTorch 텐서로 변환
+        # "tf" - TensorFlow
+        # "np" - NumPy
+        # "pt" - PyTorch
         inputs = tokenizer(example_text, return_tensors="pt")
         print(f"✓ 입력 생성 완료 (토큰 수: {len(inputs['input_ids'][0])})")
 
