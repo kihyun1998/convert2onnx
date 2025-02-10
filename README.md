@@ -24,3 +24,9 @@ pip install torch transformers onnx onnxruntime
 ```bash
 pip freeze > requirements.txt
 ```
+
+## requirements.txt install 하기
+
+```bash
+pip install -r requirements.txt
+```
