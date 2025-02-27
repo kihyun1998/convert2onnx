@@ -1,17 +1,4 @@
-# Python venv 불필요한 파일/디렉토리
-venv/Lib/site-packages/
-venv/Scripts/
-venv/pyvenv.cfg
-venv/pip-selfcheck.json
-venv/__pycache__/
-venv/*.pyc
-venv/*.pyo
-venv/*.pyd
-
-# 운영체제 관련 파일
-venv/lib64
-venv/share/
-venv/include/
+venv/
 
 ## oonx파일
-venv/src/oonx
+**/oonx

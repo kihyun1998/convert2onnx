@@ -67,8 +67,8 @@ def convert_model_to_onnx(
 
 if __name__ == "__main__":
     # 변환 설정
-    MODEL_NAME = "skt/kobert-base-v1"        # 변환할 모델 이름
-    ONNX_PATH = "./oonx/kobert-base-v1.onnx" # 저장할 경로
+    MODEL_NAME = "kakaocorp/kanana-nano-2.1b-instruct"        # 변환할 모델 이름
+    ONNX_PATH = "./oonx/kanana-nano-2.1b-instruct.onnx" # 저장할 경로
     
     # 변환 실행
     convert_model_to_onnx(MODEL_NAME, ONNX_PATH)
