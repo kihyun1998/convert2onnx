@@ -77,8 +77,8 @@ def convert_model_to_onnx(
 
 if __name__ == "__main__":
     # 변환 설정
-    MODEL_NAME = "kakaocorp/kanana-nano-2.1b-embedding"        # 변환할 모델 이름
-    ONNX_PATH = "./oonx/kanana-nano-2.1b-embedding/kanana-nano-2.1b-embedding.onnx"
+    MODEL_NAME = "kakaocorp/kanana-nano-2.1b-embedding"
+    ONNX_PATH = "./oonx/kanana-nano-2.1b2/kanana-nano-2.1b-instruct.onnx"
     
     # 변환 실행
     convert_model_to_onnx(MODEL_NAME, ONNX_PATH)
