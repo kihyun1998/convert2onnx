@@ -1,4 +1,5 @@
 import torch
+import os
 from transformers import AutoTokenizer, AutoModel
 
 def convert_model_to_onnx(
@@ -17,6 +18,15 @@ def convert_model_to_onnx(
         opset_version (int): ONNX opset 버전
     """
     try:
+        # 출력 경로의 디렉토리 부분 추출
+        output_dir = os.path.dirname(output_path)
+        
+        # 디렉토리가 존재하지 않으면 생성
+        if output_dir and not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            print(f"[v] 디렉토리 생성 완료: {output_dir}")
+
+
         print(f"\n1. 모델 및 토크나이저 로드 중... ({model_name})")
         # 토크나이저 설정
         # - trust_remote_code: 원격 코드 신뢰 여부 (커스텀 코드 포함된 모델용)
@@ -67,8 +77,8 @@ def convert_model_to_onnx(
 
 if __name__ == "__main__":
     # 변환 설정
-    MODEL_NAME = "kakaocorp/kanana-nano-2.1b-instruct"        # 변환할 모델 이름
-    ONNX_PATH = "./oonx/kanana-nano-2.1b-instruct.onnx" # 저장할 경로
+    MODEL_NAME = "kakaocorp/kanana-nano-2.1b-embedding"        # 변환할 모델 이름
+    ONNX_PATH = "./oonx/kanana-nano-2.1b-embedding/kanana-nano-2.1b-embedding.onnx"
     
     # 변환 실행
     convert_model_to_onnx(MODEL_NAME, ONNX_PATH)
