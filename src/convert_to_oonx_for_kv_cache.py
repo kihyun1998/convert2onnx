@@ -77,7 +77,7 @@ def convert_model_to_onnx(
         LlamaModel.forward = original_forward
 
 if __name__ == "__main__":
-    MODEL_NAME = "kakaocorp/kanana-nano-2.1b-embedding"        
-    ONNX_PATH = "./oonx/kanana-nano-2.1b-embedding/kanana-nano-2.1b-embedding.onnx"
+    MODEL_NAME = "kakaocorp/kanana-nano-2.1b-instruct"
+    ONNX_PATH = "./oonx/kanana-nano-2.1b/kanana-nano-2.1b-instruct.onnx"
     
     convert_model_to_onnx(MODEL_NAME, ONNX_PATH)
